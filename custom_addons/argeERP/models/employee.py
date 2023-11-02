@@ -7,8 +7,8 @@ class ArgeErpEmployee(models.Model):
     _description = "ArgeERP employee"
 
     name = fields.Char(string='Name', tracking=True)
-    date_of_birth = fields.Date(string='Date Of Birth')
-    ref = fields.Char(string='Reference', default='Odoo Mates')
+    date_of_birth = fields.Date(string='Date Of Birth', tracking=True)
+    ref = fields.Char(string='Reference', default='Odoo Mates', tracking=True)
     age = fields.Integer(string='Age', compute='_compute_age', tracking=True)
     gender = fields.Selection([('male','Male'), ('female','Female')], string="Gender", tracking=True)
     active = fields.Boolean(string='Active', default=True)

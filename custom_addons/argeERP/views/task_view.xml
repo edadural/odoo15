@@ -8,6 +8,8 @@
             <tree>
                 <field name="employee_id"/>
                 <field name="employee_task"/>
+                <field name="task_time"/>
+                <field name="task_deadline"/>
             </tree>
         </field>
     </record>
@@ -24,6 +26,8 @@
                             <field name="employee_task"/>
                         </group>
                         <group>
+                            <field name="task_time"/>
+                            <field name="task_deadline"/>
                         </group>
                     </group>
                 </sheet>
