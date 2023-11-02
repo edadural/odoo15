@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_ottoerp_root"
+              name="OttoERP"
+              web_icon="ottoERP,static/description/logo.png"
+              sequence="0" />
+
+    <menuitem id="menu_employee_master"
+              name="Employee Details"
+              parent="menu_ottoerp_root"
+              sequence="0" />
+
+</odoo>

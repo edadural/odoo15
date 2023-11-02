@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_argeerp_root"
+              name="ArgeERP"
+              web_icon="argeERP,static/description/logo.png"
+              sequence="0" />
+
+    <menuitem id="menu_employee_master"
+              name="Employee Details"
+              parent="menu_argeerp_root"
+              sequence="0" />
+
+    <menuitem id="menu_task_master"
+              name="Tasks"
+              parent="menu_argeerp_root"
+              sequence="0" />
+
+</odoo>
