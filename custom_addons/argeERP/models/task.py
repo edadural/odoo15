@@ -11,9 +11,8 @@ class ArgeErpTask(models.Model):
     task_time = fields.Date(string='Time', tracking=True, default=fields.Datetime.now)
     task_deadline = fields.Date(string='Deadline', tracking=True)
     ref = fields.Char(string='Reference', tracking=True)
-    age = fields.Integer(string='Age', tracking=True)
+    html = fields.Html(string='Html')
 
     @api.onchange('employee_id')
     def onchange_employee_id(self):
         self.ref = self.employee_id.ref
-        self.age = self.employee_id.age

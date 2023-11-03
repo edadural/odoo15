@@ -23,6 +23,7 @@
                     <group>
                         <group>
                             <field name="employee_id"/>
+                            <field name="ref"/>
                             <field name="employee_task"/>
                         </group>
                         <group>
@@ -31,11 +32,8 @@
                     </group>
 
                     <notebook>
-                        <page string="Detay" name="detay">
-                            <group>
-                                <field name="ref"/>
-                                <field name="age"/>
-                            </group>
+                        <page string="Html kısım" name="detay">
+                                <field name="html" placeholder="Enter your text"/>
                         </page>
                         <page string="Tarih" name="tarih">
                             <group>
