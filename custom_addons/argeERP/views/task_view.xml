@@ -38,9 +38,11 @@
                         <group>
                             <field name="task_deadline"/>
                             <button name="action_test" string="Object Button" type="object"
+                                    help="A message will be printed in the log"
                                     confirm="Are you sure to execute python code ?"
                                     class="oe_highlight"/>
                             <button name="%(argeERP.action_argeerp_employee)d" string="Action Button"
+                                    help="On clicking this button, you will be redirected to employee records"
                                     confirm="Are you sure to open the employee action ?"
                                     type="action" class="oe_highlight"/>
                         </group>
