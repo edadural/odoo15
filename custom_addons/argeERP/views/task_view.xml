@@ -26,10 +26,23 @@
                             <field name="employee_task"/>
                         </group>
                         <group>
-                            <field name="task_time"/>
                             <field name="task_deadline"/>
                         </group>
                     </group>
+
+                    <notebook>
+                        <page string="Detay" name="detay">
+                            <group>
+                                <field name="ref"/>
+                                <field name="age"/>
+                            </group>
+                        </page>
+                        <page string="Tarih" name="tarih">
+                            <group>
+                                <field name="task_time"/>
+                            </group>
+                        </page>
+                    </notebook>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids" groups="base.group_user"/>
