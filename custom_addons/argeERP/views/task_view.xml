@@ -11,6 +11,7 @@
                 <field name="employee_task"/>
                 <field name="task_time"/>
                 <field name="task_deadline"/>
+                <field name="activity_ids" widget="list_activity"/>
                 <field name="state"
                        decoration-info="state == 'draft'"
                        decoration-warning="state == 'in_consultation'"
