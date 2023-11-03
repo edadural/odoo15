@@ -8,10 +8,10 @@
             <tree decoration-warning="state == 'in_consultation'"
                   decoration-success="state == 'done'" decoration-danger="state == 'cancel'">
                 <field name="employee_id"/>
-                <field name="employee_task"/>
-                <field name="task_time"/>
+                <field name="employee_task" optional="show"/>
+                <field name="task_time" optional="hide"/>
                 <field name="task_deadline"/>
-                <field name="activity_ids" widget="list_activity"/>
+                <field name="activity_ids" widget="list_activity" optional="show"/>
                 <field name="state"
                        decoration-info="state == 'draft'"
                        decoration-warning="state == 'in_consultation'"
