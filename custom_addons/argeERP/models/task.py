@@ -17,6 +17,11 @@ class ArgeErpTask(models.Model):
         ('1', 'Low'),
         ('2', 'High'),
         ('3', 'Very High')], string="Priority")
+    state = fields.Selection([
+        ('draft', 'Draft'),
+        ('in_consultation', 'In Consultation'),
+        ('done', 'Done'),
+        ('cancel', 'Cancelled')], default='draft', string="Status", required=True)
 
     @api.onchange('employee_id')
     def onchange_employee_id(self):
