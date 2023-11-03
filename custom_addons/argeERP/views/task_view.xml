@@ -10,6 +10,12 @@
                 <field name="employee_task"/>
                 <field name="task_time"/>
                 <field name="task_deadline"/>
+                <field name="state"
+                       decoration-info="state == 'draft'"
+                       decoration-warning="state == 'in_consultation'"
+                       decoration-success="state == 'done'"
+                       decoration-danger="state == 'cancel'"
+                       widget="badge"/>
             </tree>
         </field>
     </record>
