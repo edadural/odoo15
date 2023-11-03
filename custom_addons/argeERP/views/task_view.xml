@@ -37,9 +37,11 @@
                         </group>
                         <group>
                             <field name="task_deadline"/>
+                            <button name="action_test" string="Object Button" type="object" class="oe_highlight"/>
+                            <button name="%(argeERP.action_argeerp_employee)d" string="Action Button"
+                                   type="action" class="oe_highlight"/>
                         </group>
                     </group>
-
                     <notebook>
                         <page string="Html kısım" name="detay">
                                 <field name="html" placeholder="Enter your text"/>

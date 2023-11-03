@@ -26,3 +26,6 @@ class ArgeErpTask(models.Model):
     @api.onchange('employee_id')
     def onchange_employee_id(self):
         self.ref = self.employee_id.ref
+
+    def action_test(self):
+        print("button click")
