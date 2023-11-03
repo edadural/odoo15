@@ -22,6 +22,7 @@ class ArgeErpTask(models.Model):
         ('in_consultation', 'In Consultation'),
         ('done', 'Done'),
         ('cancel', 'Cancelled')], default='draft', string="Status", required=True)
+    manager_id = fields.Many2one('res.users', string='Manager')
 
     @api.onchange('employee_id')
     def onchange_employee_id(self):

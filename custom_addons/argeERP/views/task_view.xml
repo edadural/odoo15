@@ -10,6 +10,7 @@
                 <field name="employee_id"/>
                 <field name="employee_task" optional="show"/>
                 <field name="task_time" optional="hide"/>
+                <field name="manager_id" widget="many2one_avatar_user"/>
                 <field name="task_deadline"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
                 <field name="state"
@@ -42,6 +43,7 @@
                             <field name="employee_id"/>
                             <field name="ref"/>
                             <field name="employee_task"/>
+                            <field name="manager_id" widget="many2one_avatar"/>
                         </group>
                         <group>
                             <field name="task_deadline"/>
