@@ -5,7 +5,8 @@
         <field name="name">argeerp.task.tree</field>
         <field name="model">argeerp.task</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree decoration-warning="state == 'in_consultation'"
+                  decoration-success="state == 'done'" decoration-danger="state == 'cancel'">
                 <field name="employee_id"/>
                 <field name="employee_task"/>
                 <field name="task_time"/>
@@ -27,7 +28,7 @@
             <form>
                 <header>
                     <field name="state" widget="statusbar" nolabel="1" options="{'clickable': '1'}"
-                            statusbar_visible="draft,in_consultation,done"/>
+                           statusbar_visible="draft,in_consultation,done"/>
                 </header>
                 <sheet>
                     <div>
@@ -55,7 +56,7 @@
                     </group>
                     <notebook>
                         <page string="Html kısım" name="detay">
-                                <field name="html" placeholder="Enter your text"/>
+                            <field name="html" placeholder="Enter your text"/>
                         </page>
                         <page string="Tarih" name="tarih">
                             <group>
