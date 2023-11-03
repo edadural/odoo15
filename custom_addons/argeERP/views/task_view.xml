@@ -18,8 +18,13 @@
         <field name="name">argeerp.task.form</field>
         <field name="model">argeerp.task</field>
         <field name="arch" type="xml">
-            <form create="0" delete="0" edit="0">
+            <form>
                 <sheet>
+                    <div>
+                        <h2>
+                            <field name="priority" widget="priority"/>
+                        </h2>
+                    </div>
                     <group>
                         <group>
                             <field name="employee_id"/>

@@ -12,6 +12,11 @@ class ArgeErpTask(models.Model):
     task_deadline = fields.Date(string='Deadline', tracking=True)
     ref = fields.Char(string='Reference', tracking=True)
     html = fields.Html(string='Html')
+    priority = fields.Selection([
+        ('0', 'Normal'),
+        ('1', 'Low'),
+        ('2', 'High'),
+        ('3', 'Very High')], string="Priority")
 
     @api.onchange('employee_id')
     def onchange_employee_id(self):
