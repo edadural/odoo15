@@ -40,7 +40,7 @@
                     </div>
                     <group>
                         <group>
-                            <field name="employee_id"/>
+                            <field name="employee_id" default_focus="1"/>
                             <field name="ref"/>
                             <field name="employee_task"/>
                             <field name="manager_id" widget="many2one_avatar"/>
