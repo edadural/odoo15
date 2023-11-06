@@ -6,7 +6,7 @@
         <field name="model">argeerp.task</field>
         <field name="arch" type="xml">
             <tree decoration-warning="state == 'in_consultation'"
-                  decoration-success="state == 'done'" decoration-danger="state == 'cancel'">
+                  decoration-success="state == 'done'" decoration-danger="state == 'cancel'" sample="1">
                 <field name="employee_id"/>
                 <field name="employee_task" optional="show"/>
                 <field name="task_time" optional="hide"/>
