@@ -22,7 +22,7 @@ class ArgeErpTask(models.Model):
         ('in_consultation', 'In Consultation'),
         ('done', 'Done'),
         ('cancel', 'Cancelled')], default='draft', string="Status", required=True)
-    manager_id = fields.Many2one('res.users', string='Manager')
+    manager_id = fields.Many2one('res.users', string='Manager', tracking=True)
 
     @api.onchange('employee_id')
     def onchange_employee_id(self):
@@ -37,3 +37,20 @@ class ArgeErpTask(models.Model):
                 'type': 'rainbow_man'
             }
         }
+
+    def action_in_consultation(self):
+        for rec in self:
+            rec.state = 'in_consultation'
+
+    def action_done(self):
+        for rec in self:
+            rec.state = 'done'
+
+    def action_cancel(self):
+        for rec in self:
+            rec.state = 'cancel'
+
+    def action_draft(self):
+        for rec in self:
+            rec.state = 'draft'
+
