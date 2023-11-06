@@ -30,12 +30,16 @@
             <form>
                 <header>
                     <button name="action_in_consultation" string="In Colsultation" class="oe_highlight"
+                            data-hotkey="x"
                             type="object" states="draft"/>
                     <button name="action_done" string="Mark As Done" class="oe_highlight"
+                            data-hotkey="v"
                             type="object" states="in_consultation"/>
-                    <button name="action_cancel" string="Cancel" class="oe_highlight"
+                    <button name="action_cancel" string="Cancel"
+                            data-hotkey="z"
                             type="object" states="draft,in_consultation"/>
-                    <button name="action_draft" string="Reset To Draft" class="oe_highlight"
+                    <button name="action_draft" string="Reset To Draft"
+                            data-hotkey="r"
                             type="object" states="cancel"/>
                     <!--options="{'clickable': '1'}-->
                     <field name="state" widget="statusbar" nolabel="1"
