@@ -59,7 +59,8 @@
                     </group>
                     <notebook>
                         <page string="Html kısım" name="detay">
-                            <field name="html" placeholder="Enter your text"/>
+                            <field name="html" placeholder="Enter your text"
+                            options="{'collaborative': true, 'resizable': true}"/>
                         </page>
                         <page string="Tarih" name="tarih">
                             <group>
