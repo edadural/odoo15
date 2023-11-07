@@ -176,11 +176,22 @@
         </field>
     </record>
 
+    <record id="view_argeerp_task_graph" model="ir.ui.view">
+        <field name="name">argeerp.task.graph</field>
+        <field name="model">argeerp.task</field>
+        <field name="arch" type="xml">
+            <graph disable_linking="1" stacked="False">
+                <field name="manager_id"/>
+                <field name="state"/>
+            </graph>
+        </field>
+    </record>
+
     <record id="action_argeerp_task" model="ir.actions.act_window">
         <field name="name">Task</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">argeerp.task</field>
-        <field name="view_mode">tree,form,activity,kanban,calendar</field>
+        <field name="view_mode">tree,form,activity,kanban,calendar,graph</field>
         <field name="context">{}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
