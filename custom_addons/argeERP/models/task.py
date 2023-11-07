@@ -12,6 +12,7 @@ class ArgeErpTask(models.Model):
     task_deadline = fields.Date(string='Deadline', tracking=True)
     ref = fields.Char(string='Reference', tracking=True, help="Reference from patient record")
     html = fields.Html(string='Html')
+    img = fields.Image("Image")
     priority = fields.Selection([
         ('0', 'Normal'),
         ('1', 'Low'),

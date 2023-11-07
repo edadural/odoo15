@@ -72,6 +72,9 @@
                         </h2>
                     </div>
                     <group>
+                        <field name="img" class="oe_avatar" widget="image" />
+                    </group>
+                    <group>
                         <group>
                             <field name="employee_id" default_focus="1"/>
                             <field name="ref"/>
@@ -134,9 +137,13 @@
                        decoration-success="state == 'done'"
                        decoration-danger="state == 'cancel'"
                        widget="badge"/>
+                <field name="img" class="oe_avatar" widget="image" />
                 <templates>
                     <t t-name="kanban-box">
-                        <div class="oe_kanban_global_click">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill">
+                            <div class="o_kanban_image d-none d-md-block">
+                                <field name="img" class="oe_avatar" widget="image" />
+                            </div>
                             <div class="oe_kanban_details d-flex flex-column">
                                 <strong>
                                     <field name="employee_id" />
