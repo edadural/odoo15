@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_argeerp_page_tree" model="ir.ui.view">
+        <field name="name">argeerp.page.tree</field>
+        <field name="model">argeerp.page</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="employee_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_argeerp_page" model="ir.actions.act_window">
+        <field name="name">Page</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">argeerp.page</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first page!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_page"
+              name="Page"
+              action="action_argeerp_page"
+              parent="menu_page_master"
+              sequence="0" />
+</odoo>

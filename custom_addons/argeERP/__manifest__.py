@@ -13,6 +13,7 @@
         'security/ir.model.access.csv',
         'views/menu.xml',
         'views/task_view.xml',
+        'views/page_view.xml',
         'views/employee_view.xml',
         'views/female_employee_view.xml',
     ],
