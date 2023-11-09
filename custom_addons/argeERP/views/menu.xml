@@ -12,7 +12,7 @@
               sequence="0" />
 
     <menuitem id="menu_task_master"
-              name="Tasks"
+              name="ArgeProject"
               parent="menu_argeerp_root"
               sequence="0" />
 

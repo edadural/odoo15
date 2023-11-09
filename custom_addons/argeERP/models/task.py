@@ -1,13 +1,15 @@
 from odoo import api, fields, models
-
+from datetime import date
 class ArgeErpTask(models.Model):
     _name = "argeerp.task"
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "ArgeERP Task"
-    _rec_name = "employee_id"
+    _rec_name = "customer_id"
 
-    employee_id = fields.Many2one('argeerp.employee', string='Employee', tracking=True)
-    employee_task = fields.Char(string='Task', tracking=True)
+    customer_id = fields.Many2one('argeerp.employee', string='Müşteri', tracking=True)
+    project_name = fields.Char(string='Proje Adı', tracking=True)
+    project_code = fields.Char(string='Proje Kodu', tracking=True)
+    cost = fields.Integer(string='Toplam Maliyet', tracking=True)
     task_time = fields.Date(string='Time', tracking=True, default=fields.Datetime.now)
     task_deadline = fields.Date(string='Deadline', tracking=True)
     ref = fields.Char(string='Reference', tracking=True, help="Reference from patient record")
@@ -19,15 +21,16 @@ class ArgeErpTask(models.Model):
         ('2', 'High'),
         ('3', 'Very High')], string="Priority")
     state = fields.Selection([
-        ('draft', 'Draft'),
-        ('in_consultation', 'In Consultation'),
-        ('done', 'Done'),
-        ('cancel', 'Cancelled')], default='draft', string="Status", required=True)
-    manager_id = fields.Many2one('res.users', string='Manager', tracking=True)
+        ('draft', 'Oluşturuldu'),
+        ('in_consultation', 'Bekleniyor'),
+        ('done', 'Onaylandı'),
+        ('cancel', 'Reddedildi')], default='draft', string="Durum", required=True)
+    manager_id = fields.Many2one('res.users', string='Oluşturan', tracking=True)
+    groups_id = fields.Many2one('res.groups', string='Departman', tracking=True)
 
-    @api.onchange('employee_id')
+    @api.onchange('customer_id')
     def onchange_employee_id(self):
-        self.ref = self.employee_id.ref
+        self.ref = self.customer_id.ref
 
     def action_test(self):
         print("button click")

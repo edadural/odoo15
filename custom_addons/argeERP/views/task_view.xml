@@ -6,12 +6,12 @@
         <field name="model">argeerp.task</field>
         <field name="arch" type="xml">
             <activity string="Tasks">
-                <field name="employee_id"/>
+                <field name="customer_id"/>
                 <field name="ref"/>
                 <templates>
                     <div t-name="activity-box">
-                        <img t-att-src="activity_image('argeerp.employee', 'image', record.employee_id.raw_value)"
-                             t-att-title="record.employee_id.value" t-att-alt="record.employee_id.value"/>
+                        <img t-att-src="activity_image('argeerp.employee', 'image', record.customer_id.raw_value)"
+                             t-att-title="record.customer_id.value" t-att-alt="record.customer_id.value"/>
                         <div>
                             <field name="ref" display="full"/>
                         </div>
@@ -27,18 +27,21 @@
         <field name="arch" type="xml">
             <tree decoration-warning="state == 'in_consultation'"
                   decoration-success="state == 'done'" decoration-danger="state == 'cancel'" sample="1" multi_edit="1">
-                <field name="employee_id"/>
-                <field name="employee_task" optional="show"/>
-                <field name="task_time" optional="hide"/>
-                <field name="manager_id" widget="many2one_avatar_user"/>
-                <field name="task_deadline"/>
-                <field name="activity_ids" widget="list_activity" optional="show"/>
+                <field name="project_code" optional="show"/>
                 <field name="state"
                        decoration-info="state == 'draft'"
                        decoration-warning="state == 'in_consultation'"
                        decoration-success="state == 'done'"
                        decoration-danger="state == 'cancel'"
                        widget="badge"/>
+                <field name="project_name" optional="show"/>
+                <field name="manager_id" widget="many2one_avatar_user"/>
+                <field name="groups_id"/>
+                <field name="customer_id"/>
+                <field name="cost"/>
+                <field name="task_time" optional="hide"/>
+                <field name="task_deadline" optional="hide"/>
+                <field name="activity_ids" widget="list_activity" optional="hide"/>
             </tree>
         </field>
     </record>
@@ -76,21 +79,24 @@
                     </group>
                     <group>
                         <group>
-                            <field name="employee_id" default_focus="1"/>
-                            <field name="ref"/>
-                            <field name="employee_task"/>
+                            <field name="project_name"/>
+                            <field name="project_code"/>
+                            <field name="customer_id" default_focus="1"/>
                             <field name="manager_id" widget="many2one_avatar"/>
                         </group>
                         <group>
-                            <field name="task_deadline"/>
-                            <button name="action_test" string="Object Button" type="object"
-                                    help="A message will be printed in the log"
-                                    confirm="Are you sure to execute python code ?"
-                                    class="oe_highlight"/>
-                            <button name="%(argeERP.action_argeerp_employee)d" string="Action Button"
-                                    help="On clicking this button, you will be redirected to employee records"
-                                    confirm="Are you sure to open the employee action ?"
-                                    type="action" class="oe_highlight"/>
+                            <field name="task_time"/>
+<!--                            <field name="task_deadline"/>-->
+                            <field name="groups_id"/>
+                            <field name="cost"/>
+<!--                            <button name="action_test" string="Object Button" type="object"-->
+<!--                                    help="A message will be printed in the log"-->
+<!--                                    confirm="Are you sure to execute python code ?"-->
+<!--                                    class="oe_highlight"/>-->
+<!--                            <button name="%(argeERP.action_argeerp_employee)d" string="Action Button"-->
+<!--                                    help="On clicking this button, you will be redirected to employee records"-->
+<!--                                    confirm="Are you sure to open the employee action ?"-->
+<!--                                    type="action" class="oe_highlight"/>-->
                         </group>
                     </group>
                     <notebook>
@@ -128,8 +134,8 @@
         <field name="model">argeerp.task</field>
         <field name="arch" type="xml">
             <kanban>
-                <field name="employee_id" />
-                <field name="employee_task" />
+                <field name="customer_id" />
+                <field name="project_name" />
                 <field name="task_deadline"/>
                 <field name="state"
                        decoration-info="state == 'draft'"
@@ -146,10 +152,10 @@
                             </div>
                             <div class="oe_kanban_details d-flex flex-column">
                                 <strong>
-                                    <field name="employee_id" />
+                                    <field name="customer_id" />
                                 </strong>
                                 <ul>
-                                    <li>Task: <field name="employee_task" /> </li>
+                                    <li>Task: <field name="project_name" /> </li>
                                     <li>Deadline: <field name="task_deadline"/> </li>
                                     <li> <field name="state"
                                                 decoration-info="state == 'draft'"
@@ -171,7 +177,7 @@
         <field name="model">argeerp.task</field>
         <field name="arch" type="xml">
             <calendar date_start="activity_date_deadline" mode="month">
-                <field name="employee_id"/>
+                <field name="customer_id"/>
             </calendar>
         </field>
     </record>
@@ -212,7 +218,7 @@
     </record>
 
     <menuitem id="menu_task"
-              name="Task"
+              name="Short Step Projects"
               action="action_argeerp_task"
               parent="menu_task_master"
               sequence="0" />
