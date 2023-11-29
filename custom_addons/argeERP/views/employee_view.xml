@@ -6,10 +6,10 @@
         <field name="model">argeerp.employee</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name" string="Employee Name"/>
+                <field name="name" string="Müşteri Adı"/>
                 <field name="ref"/>
-                <field name="age"/>
-                <field name="gender"/>
+ <!--                <field name="age"/>-->
+<!--                <field name="gender"/>-->
             </tree>
         </field>
     </record>
@@ -43,33 +43,33 @@
         </field>
     </record>
 
-    <record id="view_argeerp_employee_search" model="ir.ui.view">
-        <field name="name">argeerp.employee.search</field>
-        <field name="model">argeerp.employee</field>
-        <field name="arch" type="xml">
-            <search>
-                <field name="name" string="Employee Name" filter_domain="['|',('name', 'ilike', self),('ref', 'ilike', self)]"/>
-                <field name="ref"/>
-                <field name="age"/>
-                <field name="gender"/>
-                <filter name="filter_male" string="Male" domain="[('gender', '=', 'male')]"/>
-                <filter name="filter_female" string="Female" domain="[('gender', '=', 'female')]"/>
+<!--    <record id="view_argeerp_employee_search" model="ir.ui.view">-->
+<!--        <field name="name">argeerp.employee.search</field>-->
+<!--        <field name="model">argeerp.employee</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <search>-->
+<!--                <field name="name" string="Employee Name" filter_domain="['|',('name', 'ilike', self),('ref', 'ilike', self)]"/>-->
+<!--                <field name="ref"/>-->
+<!--                <field name="age"/>-->
+<!--                <field name="gender"/>-->
+<!--                <filter name="filter_male" string="Male" domain="[('gender', '=', 'male')]"/>-->
+<!--                <filter name="filter_female" string="Female" domain="[('gender', '=', 'female')]"/>-->
+<!--&lt;!&ndash;                <separator/>&ndash;&gt;-->
+<!--&lt;!&ndash;                <filter name="filter_kids" string="Kids" domain="[('age', '&lt;=', 5)]"/>&ndash;&gt;-->
 <!--                <separator/>-->
-<!--                <filter name="filter_kids" string="Kids" domain="[('age', '&lt;=', 5)]"/>-->
-                <separator/>
-                <filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
-                <group expand="0" string="Group By">
-                    <filter string="Gender" name="group_by_gender" context="{'group_by': 'gender'}"/>
-                </group>
-                <searchpanel>
-                    <field name="gender" icon="fa-users" select="multi" enable_counters="1"/>
-                </searchpanel>
-            </search>
-        </field>
-    </record>
+<!--                <filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>-->
+<!--                <group expand="0" string="Group By">-->
+<!--                    <filter string="Gender" name="group_by_gender" context="{'group_by': 'gender'}"/>-->
+<!--                </group>-->
+<!--                <searchpanel>-->
+<!--                    <field name="gender" icon="fa-users" select="multi" enable_counters="1"/>-->
+<!--                </searchpanel>-->
+<!--            </search>-->
+<!--        </field>-->
+<!--    </record>-->
 
     <record id="action_argeerp_employee" model="ir.actions.act_window">
-        <field name="name">Employees</field>
+        <field name="name">Müşteriler</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">argeerp.employee</field>
         <field name="view_mode">tree,form</field>

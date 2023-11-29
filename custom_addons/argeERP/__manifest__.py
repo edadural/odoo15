@@ -16,6 +16,7 @@
         'views/page_view.xml',
         'views/employee_view.xml',
         'views/female_employee_view.xml',
+        'views/fproje_view.xml',
     ],
     'demo': [],
     'application': True,

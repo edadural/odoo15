@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access.argeerp.employee,access_argeerp_employee,argeERP.model_argeerp_employee,base.group_user,1,1,1,1
 access.argeerp.task,access_argeerp_task,argeERP.model_argeerp_task,base.group_user,1,1,1,1
 access.argeerp.page,access_argeerp_page,argeERP.model_argeerp_page,base.group_user,1,1,1,1
+access.argeerp.fproje,access_argeerp_fproje,argeERP.model_argeerp_fproje,base.group_user,1,1,1,1

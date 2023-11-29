@@ -7,7 +7,7 @@
               sequence="0" />
 
     <menuitem id="menu_employee_master"
-              name="Employee Details"
+              name="Müşteri Detayları"
               parent="menu_argeerp_root"
               sequence="0" />
 
@@ -18,6 +18,11 @@
 
     <menuitem id="menu_page_master"
               name="Pages"
+              parent="menu_argeerp_root"
+              sequence="0" />
+
+    <menuitem id="menu_fproje_master"
+              name="Full Step Project"
               parent="menu_argeerp_root"
               sequence="0" />
 

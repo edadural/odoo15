@@ -205,7 +205,7 @@
     </record>
 
     <record id="action_argeerp_task" model="ir.actions.act_window">
-        <field name="name">Task</field>
+        <field name="name">Short Step Project</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">argeerp.task</field>
         <field name="view_mode">tree,form,activity,kanban,calendar,graph,pivot</field>

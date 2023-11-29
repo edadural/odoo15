@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_argeerp_fproje_tree" model="ir.ui.view">
+        <field name="name">argeerp.fproje.tree</field>
+        <field name="model">argeerp.fproje</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="project_name"/>
+                <field name="customer_id"/>
+                <field name="process"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_argeerp_fproje_form" model="ir.ui.view">
+        <field name="name">argeerp.fproje.form</field>
+        <field name="model">argeerp.fproje</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                </header>
+                <sheet>
+                    <group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_argeerp_fproje" model="ir.actions.act_window">
+        <field name="name">Full Step Project</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">argeerp.fproje</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first fproje!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_fproje"
+              name="Full Step Project"
+              action="action_argeerp_fproje"
+              parent="menu_task_master"
+              sequence="0" />
+</odoo>
